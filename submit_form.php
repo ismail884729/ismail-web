@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Send email
-    $to = "recipient@example.com"; // Change this to your email address
+    $to = "ismailmakamel12@gmail.com"; // Change this to your email address
     $subject = "New message from $name";
     $body = "Name: $name\nEmail: $email\nMessage: $message";
     $headers = "From: $email";
