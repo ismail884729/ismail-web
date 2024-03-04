@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to Our Tourism Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="accommodations.html">Accommodations</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <marquee behavior="scroll" direction="left">New trip</marquee>
+    </header>
+</body>
+
+
+    <main>
+        <section id="home">
+            <h2>Explore New Destinations</h2>
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="safari_in_serengeti.jpg" alt="Destination 1">
+                    <div class="text">Destination 1</div>
+                </div>
+                <div class="slide fade">
+                    <img src="safari_in_serengeti.jpg" alt="Destination 2">
+                    <div class="text">Destination 2</div>
+                </div>
+                <!-- Add more slides as needed -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="smoke"></div> <!-- Add smoke animation -->
+        </section>
+        
+
+        <section id="destinations">
+            <h2>Popular Destinations</h2>
+            <section id="home">
+                
+                <div class="destination-grid">
+                    <div class="destination-card">
+                        <img src="safari_in_serengeti.jpg" alt="Destination 1">
+                        <h3>Destination 1</h3>
+                        <p>Description of Destination 1</p>
+                    </div>
+                    <div class="destination-card">
+                        <img src="safari_in_serengeti.jpg" alt="Destination 2">
+                        <h3>Destination 2</h3>
+                        <p>Description of Destination 2</p>
+                    </div>
+                    <!-- Add more destination cards as needed -->
+                </div>
+            </section>
+            
+        </section>
+
+        <section id="accommodations">
+           
+            </section>
+            
+        </section>
+
+        <section id="activities">
+            <h2>Exciting Activities</h2>
+            <section id="activities">
+               
+                <div class="activity">
+                    <div class="activity-item">
+                        <img src="safari_in_serengeti.jpg" alt="Activity 1">
+                        <div class="activity-details">
+                            <h3>Hiking Adventure</h3>
+                            <p>Enjoy breathtaking views and explore nature trails.</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <img src="safari_in_serengeti.jpg" alt="Activity 2">
+                        <div class="activity-details">
+                            <h3>Scuba Diving</h3>
+                            <p>Discover the underwater world and colorful marine life.</p>
+                        </div>
+                    </div>
+                    <!-- Add more activity items as needed -->
+                </div>
+            </section>
+            
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <section id="contact">
+              
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Email: example@example.com</p>
+                    <p>Phone: 123-456-7890</p>
+                    <!-- Add more contact information if necessary -->
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form action="submit_form.php" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </section>
+            
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Tourism Website. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
+<script>
+    // This code assumes you have elements in your HTML that you want to manipulate using JavaScript.
+// Make sure to reference those elements by their IDs or classes.
+
+// Example: Changing the background color of the header on scroll
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.backgroundColor = '#0056b3'; // Change to a darker shade of blue
+    } else {
+        header.style.backgroundColor = '#007bff'; // Change back to the original color
+    }
+});
+
+// Example: Creating a simple slideshow for the home section
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000); // Change image every 5 seconds
+}
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+
+window.addEventListener('scroll', function() {
+    var parallax = document.querySelector('.parallax');
+    var scrolled = window.scrollY;
+    var speed = 0.5; // Adjust the speed of the parallax effect
+
+    parallax.style.backgroundPositionY = -(scrolled * speed) + 'px';
+});
+
+
+
+</script>

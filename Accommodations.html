@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodations - Tourism Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Tourism Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="accommodations.html">Accommodations</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accommodations">
+            <h2>Find Your Accommodations</h2>
+            
+            <section id="accommodations">
+            
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search accommodations...">
+                </div>
+                <div class="accommodation-list">
+                    <div class="accommodation">
+                        <h3>Hotel ABC</h3>
+                        <p>Description of Hotel ABC</p>
+                    </div>
+                    <div class="accommodation">
+                        <h3>Resort XYZ</h3>
+                        <p>Description of Resort XYZ</p>
+                    </div>
+                    <section id="accommodations">
+                    
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Search accommodations...">
+                        </div>
+                        <div id="accommodation-list" class="accommodation-list">
+                            <!-- Accommodations will be dynamically added here -->
+                        </div>
+                    </section>
+                    
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tourism Website. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
+<script>
+    // Sample array of accommodations
+var accommodationsData = [
+    { name: "Hotel ABC", description: "Description of Hotel ABC" },
+    { name: "Resort XYZ", description: "Description of Resort XYZ" },
+    // Add more accommodations as needed
+];
+
+// Function to dynamically generate accommodation cards
+function displayAccommodations() {
+    var accommodationList = document.getElementById("accommodation-list");
+    accommodationList.innerHTML = ""; // Clear existing content
+
+    accommodationsData.forEach(function(accommodation) {
+        var card = document.createElement("div");
+        card.classList.add("accommodation");
+
+        var title = document.createElement("h3");
+        title.textContent = accommodation.name;
+
+        var description = document.createElement("p");
+        description.textContent = accommodation.description;
+
+        card.appendChild(title);
+        card.appendChild(description);
+        accommodationList.appendChild(card);
+    });
+}
+
+// Call the function to initially display accommodations
+displayAccommodations();
+
+</script>
